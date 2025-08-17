@@ -1,0 +1,54 @@
+import React from "react";
+import { ArrowRight, BookOpen, GraduationCap, Calendar, Download, Mail, Github, Linkedin } from "lucide-react";
+
+const weeks = [
+  { n: 1, title: "Websites & Presentations", status: "Coming soon" },
+  { n: 2, title: "Automated Data Analysis", status: "Coming soon" },
+  { n: 3, title: "Text Processing & Research", status: "Coming soon" },
+  { n: 4, title: "AI for Workflow Automation", status: "Coming soon" },
+  { n: 5, title: "Custom GPTs & Chatbots", status: "Coming soon" },
+  { n: 6, title: "GenAI for Communication", status: "Coming soon" },
+  { n: 7, title: "Final Project Feedback", status: "Coming soon" },
+  { n: 8, title: "Final Project Showcase", status: "Coming soon" },
+];
+
+export default function Portfolio() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-pink-100 via-amber-50 to-white text-zinc-900">
+      {/* Top banner / navigation */}
+      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-gradient-to-r from-pink-200/80 to-orange-200/80 border-b border-zinc-200">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+          <a href="#home" className="inline-flex items-center gap-2 font-bold tracking-tight text-zinc-900">
+            <span className="inline-block h-6 w-6 rounded-full bg-gradient-to-tr from-pink-500 to-orange-400" />
+            Couplet-style ✦ Portfolio
+          </a>
+          <nav className="hidden sm:flex items-center gap-2">
+            {[
+              { href: "#about", label: "About me" },
+              { href: "#course", label: "About the course" },
+              { href: "#submissions", label: "Weekly submissions" },
+            ].map((i) => (
+              <a
+                key={i.href}
+                href={i.href}
+                className="px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-pink-500 to-orange-400 text-white hover:from-pink-600 hover:to-orange-500 transition"
+              >
+                {i.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section id="home" className="relative overflow-hidden">
+        <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-br from-pink-300 to-purple-300 blur-3xl" />
+        <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-gradient-to-br from-amber-300 to-orange-400 blur-3xl" />
+        <div className="max-w-6xl mx-auto px-4 pt-14 pb-10">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-black leading-tight bg-gradient-to-r from-pink-600 to-orange-500 bg-clip-text text-transparent">
+                Generative AI for Work & Research
+              </h1>
+              <p className="mt-4 text-lg text-zinc-700">
+                Personal portfolio and course hub for <span className="font-semibold">Abdullahi Abdulle

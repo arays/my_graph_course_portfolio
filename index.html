@@ -1,243 +1,186 @@
-import React from "react";
-import { ArrowRight, BookOpen, GraduationCap, Calendar, Download, Mail, Github, Linkedin } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generative AI for Work & Research – Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #ffe4e6, #fff7ed, #ffffff);
+      color: #1c1917;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: linear-gradient(to right, rgba(251, 207, 232, 0.8), rgba(253, 186, 116, 0.8));
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid #e5e5e5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    header a.logo {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: #111;
+    }
+    nav a {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      background: linear-gradient(to right, #ec4899, #f97316);
+      color: #fff;
+      margin-left: 0.5rem;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: linear-gradient(to right, #db2777, #ea580c);
+    }
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    h1, h2 {
+      background: linear-gradient(to right, #ec4899, #f97316);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      align-items: center;
+      gap: 2rem;
+    }
+    .button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .btn-dark {
+      background: linear-gradient(to right, #ec4899, #f97316);
+      color: #fff;
+    }
+    .btn-light {
+      background: linear-gradient(to right, #fde68a, #facc15);
+      color: #111;
+    }
+    .card {
+      border: 1px solid #e5e5e5;
+      border-radius: 1rem;
+      background: linear-gradient(to bottom right, #ffffff, #f9fafb);
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .weeks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    footer {
+      border-top: 1px solid #e5e5e5;
+      background: linear-gradient(to right, #ffffff, #fafafa);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: linear-gradient(to right, #ec4899, #f97316);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#home" class="logo">✦ Portfolio</a>
+    <nav>
+      <a href="#about">About me</a>
+      <a href="#course">About the course</a>
+      <a href="#submissions">Weekly submissions</a>
+    </nav>
+  </header>
 
-const weeks = [
-  { n: 1, title: "Websites & Presentations", status: "Coming soon" },
-  { n: 2, title: "Automated Data Analysis", status: "Coming soon" },
-  { n: 3, title: "Text Processing & Research", status: "Coming soon" },
-  { n: 4, title: "AI for Workflow Automation", status: "Coming soon" },
-  { n: 5, title: "Custom GPTs & Chatbots", status: "Coming soon" },
-  { n: 6, title: "GenAI for Communication", status: "Coming soon" },
-  { n: 7, title: "Final Project Feedback", status: "Coming soon" },
-  { n: 8, title: "Final Project Showcase", status: "Coming soon" },
-];
-
-export default function Portfolio() {
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-100 via-amber-50 to-white text-zinc-900">
-      {/* Top banner / navigation */}
-      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-gradient-to-r from-pink-200/80 to-orange-200/80 border-b border-zinc-200">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <a href="#home" className="inline-flex items-center gap-2 font-bold tracking-tight text-zinc-900">
-            <span className="inline-block h-6 w-6 rounded-full bg-gradient-to-tr from-pink-500 to-orange-400" />
-            Couplet‑style ✦ Portfolio
-          </a>
-          <nav className="hidden sm:flex items-center gap-2">
-            {[
-              { href: "#about", label: "About me" },
-              { href: "#course", label: "About the course" },
-              { href: "#submissions", label: "Weekly submissions" },
-            ].map((i) => (
-              <a
-                key={i.href}
-                href={i.href}
-                className="px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-pink-500 to-orange-400 text-white hover:from-pink-600 hover:to-orange-500 transition"
-              >
-                {i.label}
-              </a>
-            ))}
-          </nav>
+  <section id="home">
+    <div class="hero">
+      <div>
+        <h1>Generative AI for Work & Research</h1>
+        <p>Personal portfolio and course hub for <strong>Abdullahi Abdulle Farah</strong> – showcasing learning progress, weekly submissions, and resources.</p>
+        <div style="margin-top:1rem;">
+          <a href="#submissions" class="button btn-dark">View weekly work →</a>
+          <a href="#course" class="button btn-light">Course details</a>
         </div>
-      </header>
-
-      {/* Hero */}
-      <section id="home" className="relative overflow-hidden">
-        <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-br from-pink-300 to-purple-300 blur-3xl" />
-        <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-gradient-to-br from-amber-300 to-orange-400 blur-3xl" />
-        <div className="max-w-6xl mx-auto px-4 pt-14 pb-10">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-black leading-tight bg-gradient-to-r from-pink-600 to-orange-500 bg-clip-text text-transparent">
-                Generative AI for Work & Research
-              </h1>
-              <p className="mt-4 text-lg text-zinc-700">
-                Personal portfolio and course hub for <span className="font-semibold">Abdullahi Abdulle Farah</span> –
-                showcasing learning progress, weekly submissions, and resources.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a href="#submissions" className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-pink-600 to-orange-500 text-white hover:from-pink-700 hover:to-orange-600">
-                  View weekly work <ArrowRight size={18} />
-                </a>
-                <a href="#course" className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-amber-200 to-yellow-300 text-zinc-900 hover:from-amber-300 hover:to-yellow-400">
-                  Course details <BookOpen size={18} />
-                </a>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-3xl bg-gradient-to-br from-white to-zinc-50 shadow-xl border border-zinc-200 p-6 grid place-items-center">
-                <div className="grid grid-cols-3 gap-3 w-full">
-                  <div className="h-28 rounded-2xl bg-gradient-to-br from-pink-500 to-orange-400" />
-                  <div className="h-28 rounded-2xl bg-gradient-to-br from-yellow-300 to-lime-300" />
-                  <div className="h-28 rounded-2xl bg-gradient-to-br from-sky-400 to-indigo-500" />
-                  <div className="h-16 rounded-xl bg-gradient-to-r from-rose-400 to-fuchsia-500 col-span-2" />
-                  <div className="h-16 rounded-xl bg-gradient-to-r from-teal-400 to-emerald-500" />
-                  <div className="h-10 rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 col-span-3" />
-                </div>
-              </div>
-              <span className="absolute -top-3 -left-3 text-xs font-semibold bg-gradient-to-r from-zinc-900 to-zinc-700 text-white px-3 py-1 rounded-full">
-                bold • playful • colorful
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About me */}
-      <section id="about" className="scroll-mt-24">
-        <div className="max-w-6xl mx-auto px-4 py-12">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-orange-500 to-pink-500" />
-            <h2 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-pink-600 to-orange-500 bg-clip-text text-transparent">About me</h2>
-          </div>
-          <div className="grid md:grid-cols-5 gap-6">
-            <div className="md:col-span-3 space-y-4">
-              <p>
-                I am <span className="font-semibold">Abdullahi Abdulle Farah</span>, a research and monitoring leader
-                (Head of REALM, Save the Children – Somalia) with deep experience building data systems,
-                leading evaluations, and translating evidence into action across health, education, and social protection programs.
-              </p>
-              <p>
-                I am a SMART Survey Manager, a graduate of Frontline Field Epidemiology (cohort 6), and currently completing an MPH at AMREF International University.
-                I collaborate with governments and universities to advance ethical, high‑quality research.
-              </p>
-              <div className="flex flex-wrap gap-2 text-sm">
-                {[
-                  "R • STATA • Power BI",
-                  "Mobile data collection (Kobo/ODK)",
-                  "English/Somali/Kiswahili",
-                  "Accountability & Learning Systems",
-                ].map((t) => (
-                  <span key={t} className="px-3 py-1 rounded-full bg-gradient-to-r from-pink-100 to-amber-100 border border-zinc-200">{t}</span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-3 pt-2">
-                <a
-                  href="#cv"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-zinc-900 to-zinc-700 text-white hover:from-zinc-800 hover:to-zinc-600"
-                >
-                  <Download size={16}/> Download CV
-                </a>
-                <a
-                  href="mailto:abdullahi.farah80@example.com"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-white to-zinc-100 border border-zinc-300 hover:from-zinc-50 hover:to-zinc-200"
-                >
-                  <Mail size={16}/> Contact
-                </a>
-              </div>
-            </div>
-            <div className="md:col-span-2">
-              <div className="rounded-2xl border border-zinc-200 bg-gradient-to-br from-white to-zinc-50 p-5 shadow-sm">
-                <h3 className="font-semibold mb-3">Current role</h3>
-                <p className="text-sm text-zinc-700">
-                  Head of REALM (Research, Evidence, Accountability, Learning & Monitoring), Save the Children International – Somalia Country Office.
-                  I lead MEAL frameworks, research partnerships, and data digitization for multi‑sector programs.
-                </p>
-                <hr className="my-4" />
-                <h3 className="font-semibold mb-3">Qualifications</h3>
-                <ul className="text-sm text-zinc-700 list-disc pl-5 space-y-1">
-                  <li>MPH (in progress), AMREF International University</li>
-                  <li>Frontline Field Epidemiology Training (FETP), 2024/25</li>
-                  <li>BA Development Studies, Kampala International University</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About the Course */}
-      <section id="course" className="scroll-mt-24 bg-gradient-to-r from-white to-pink-50 border-y border-zinc-200">
-        <div className="max-w-6xl mx-auto px-4 py-12">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-pink-500 to-amber-400" />
-            <h2 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-pink-600 to-orange-500 bg-clip-text text-transparent">About the course</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="md:col-span-1 space-y-3">
-              <div className="rounded-2xl border border-zinc-200 bg-gradient-to-br from-white to-zinc-50 p-5 shadow-sm">
-                <h3 className="font-semibold flex items-center gap-2"><Calendar size={18}/> Schedule</h3>
-                <p className="text-sm mt-2 text-zinc-700">
-                  Weekly workshop: Sundays 5–7 PM GMT <span className="opacity-60">or</span> Wednesdays 3–5 PM GMT
-                </p>
-                <p className="text-sm text-zinc-700">Help sessions (optional): Thursdays 5–7 PM GMT</p>
-              </div>
-              <div className="rounded-2xl border border-zinc-200 bg-gradient-to-br from-white to-zinc-50 p-5 shadow-sm">
-                <h3 className="font-semibold flex items-center gap-2"><GraduationCap size={18}/> Grading</h3>
-                <ul className="text-sm mt-2 text-zinc-700 list-disc pl-5 space-y-1">
-                  <li>Workshop assignments – 40%</li>
-                  <li>Attendance & participation – 10%</li>
-                  <li>Final project – 50%</li>
-                  <li className="mt-1 font-medium">Passing grade: 80%</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="md:col-span-2">
-              <div className="rounded-2xl border border-zinc-200 bg-gradient-to-br from-white to-zinc-50 p-5 shadow-sm">
-                <h3 className="font-semibold flex items-center gap-2"><BookOpen size={18}/> Weekly topics</h3>
-                <div className="mt-4 grid sm:grid-cols-2 gap-3">
-                  {weeks.map((w) => (
-                    <div key={w.n} className="rounded-xl border border-zinc-200 p-4 bg-gradient-to-r from-pink-50 to-amber-50">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold">Week {w.n}</span>
-                        <span className="text-xs px-2 py-0.5 rounded-full bg-gradient-to-r from-zinc-100 to-zinc-200 border border-zinc-200">{w.status}</span>
-                      </div>
-                      <p className="text-sm text-zinc-700 mt-1">{w.title}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Submissions */}
-      <section id="submissions" className="scroll-mt-24">
-        <div className="max-w-6xl mx-auto px-4 py-12">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-violet-500 to-sky-500" />
-            <h2 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-violet-600 to-sky-500 bg-clip-text text-transparent">My weekly submissions</h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {weeks.map((w) => (
-              <article key={w.n} className="group rounded-2xl border border-zinc-200 bg-gradient-to-br from-white to-zinc-50 p-5 shadow-sm hover:shadow-md transition">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold tracking-wide px-2 py-1 rounded-full bg-gradient-to-r from-pink-500 to-orange-400 text-white">
-                    Week {w.n}
-                  </span>
-                  <span className="text-xs text-zinc-500">{w.status}</span>
-                </div>
-                <h3 className="mt-3 font-semibold leading-snug">{w.title}</h3>
-                <p className="mt-1 text-sm text-zinc-700">Short description will go here once submitted.</p>
-                <a
-                  href="#"
-                  className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-zinc-900 group-hover:gap-3 bg-gradient-to-r from-pink-100 to-amber-100 px-3 py-1 rounded-full"
-                >
-                  Open submission <ArrowRight size={16} />
-                </a>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-8 text-sm text-zinc-700">
-            Need to add or update links? — Edit this page and replace each placeholder link with your published work.
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-zinc-200 bg-gradient-to-r from-white to-zinc-50">
-        <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm">© {new Date().getFullYear()} Abdullahi Abdulle Farah • Generative AI for Work & Research</p>
-          <div className="flex items-center gap-3 text-sm">
-            <a href="#course" className="px-3 py-1 rounded-full border border-zinc-300 bg-gradient-to-r from-pink-50 to-amber-50">Syllabus</a>
-            <a href="#cv" className="px-3 py-1 rounded-full border border-zinc-300 bg-gradient-to-r from-pink-50 to-amber-50">CV</a>
-          </div>
-        </div>
-      </footer>
+      </div>
+      <div class="card">
+        <p style="text-align:center;">🎨 Colorful showcase box</p>
+      </div>
     </div>
-  );
-}
+  </section>
+
+  <section id="about">
+    <h2>About me</h2>
+    <p>I am <strong>Abdullahi Abdulle Farah</strong>, a research and monitoring leader (Head of REALM, Save the Children – Somalia) with experience in data systems, evaluations, and translating evidence into action across health, education, and social protection programs.</p>
+    <p>I am a SMART Survey Manager, a graduate of Frontline Field Epidemiology (cohort 6), and currently completing an MPH at AMREF International University.</p>
+  </section>
+
+  <section id="course">
+    <h2>About the course</h2>
+    <div class="card">
+      <h3>Schedule</h3>
+      <p>Workshops: Sundays 5–7 PM GMT or Wednesdays 3–5 PM GMT</p>
+      <p>Help sessions: Thursdays 5–7 PM GMT</p>
+    </div>
+    <div class="card" style="margin-top:1rem;">
+      <h3>Grading</h3>
+      <ul>
+        <li>Workshop assignments – 40%</li>
+        <li>Attendance & participation – 10%</li>
+        <li>Final project – 50%</li>
+        <li><strong>Passing grade: 80%</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="submissions">
+    <h2>My weekly submissions</h2>
+    <div class="weeks">
+      <div class="card">
+        <span class="tag">Week 1</span>
+        <h4>Websites & Presentations</h4>
+        <p>Status: Coming soon</p>
+      </div>
+      <div class="card">
+        <span class="tag">Week 2</span>
+        <h4>Automated Data Analysis</h4>
+        <p>Status: Coming soon</p>
+      </div>
+      <div class="card">
+        <span class="tag">Week 3</span>
+        <h4>Text Processing & Research</h4>
+        <p>Status: Coming soon</p>
+      </div>
+      <!-- Add other weeks similarly -->
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Abdullahi Abdulle Farah • Generative AI for Work & Research
+  </footer>
+</body>
+</html>

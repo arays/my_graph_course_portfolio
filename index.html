@@ -89,9 +89,18 @@
     .soft-list{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
 
     /* About me */
-    .pill{ display:inline-block; padding:6px 10px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid var(--stroke); color: var(--muted); margin: 4px 6px 0 0; font-size: 13px; }
+.pill{ display:inline-block; padding:6px 10px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid var(--stroke); color: var(--muted); margin: 4px 6px 0 0; font-size: 13px; }
+.profile{ display:grid; grid-template-columns: 120px 1fr; gap:16px; align-items:start; }
+@media(min-width:720px){ .profile{ grid-template-columns: 160px 1fr; gap:20px; } }
+.avatar{ position:relative; width:120px; height:120px; border-radius:50%; overflow:hidden; box-shadow: var(--shadow); border: 4px solid rgba(255,255,255,.9); background: #dbeafe; }
+@media(min-width:720px){ .avatar{ width:160px; height:160px; } }
+.avatar img{ width:100%; height:100%; display:block; object-fit: cover; object-position: 50% 24%; filter: contrast(1.02) saturate(1.05); background:#fff; }
+.tie{ position:absolute; left:50%; transform: translateX(-50%); bottom:6px; width:28%; height:36%; pointer-events:none; }
 
-    /* Timeline */
+.profile-top{ display:flex; justify-content:center; margin:6px 0 18px; }
+.avatar.avatar-lg{ width:180px; height:180px; }
+@media(min-width:720px){ .avatar.avatar-lg{ width:220px; height:220px; } }
+/* Timeline */
     .timeline{ position: relative; padding-left: 22px; }
     .timeline:before{ content:""; position:absolute; left:8px; top:0; bottom:0; width:2px; background: linear-gradient(180deg, #7aa2ff44, #8ef5d044); }
     .t-item{ position:relative; margin: 14px 0; }
@@ -139,7 +148,7 @@
         <span class="badge" aria-label="8-week live cohort">8‑Week Live Cohort • No‑Code First</span>
         <h1>Generative AI for Work & Research — <span style="background:var(--grad-2); -webkit-background-clip:text; background-clip:text; color:transparent">Showcase</span></h1>
         <p class="lead">Curating my learning journey: practical automation, data analysis, research assistants, and communication workflows powered by modern LLM tools.</p>
-        $1<hr style="border:0;height:1px;background:var(--stroke);margin:24px 0 12px">
+        <hr style="border:0;height:1px;background:var(--stroke);margin:24px 0 12px">
 <div class="grid cols-3">
   <article class="card">
     <h3>Format & Features</h3>
@@ -199,12 +208,11 @@
           <h2>About me</h2>
         </div>
       </div>
+      <div class="profile-top"><figure class="avatar avatar-lg" aria-label="Portrait of Abdullahi Abdulle Farah"><img src="https://thegraphcourses.org/wp-content/uploads/avatars/16676/686182410db21-bpfull.jpg" alt="Abdullahi Abdulle Farah profile photo" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='sandbox:/mnt/data/IMG_1042.jpg';" loading="eager" /><svg class="tie" viewBox="0 0 100 140" aria-hidden="true"><path d="M50 0 L35 28 L65 28 Z" fill="#1f2937"/><path d="M35 28 L50 135 L65 28 Q50 40 35 28" fill="#1f2937" opacity="0.95"/><path d="M45 52 L55 52 L50 135 Z" fill="#111827" opacity="0.5"/></svg></figure></div>
       <div class="grid cols-2">
         <article class="card">
   <h3>Abdullahi Abdulle Farah</h3>
-  <p>I am A humanitarian M&E practitioner with over ten years of experience in developing strategic information systems for development and humanitarian initiatives. For major donors like USAID, ECHO, DFID/FCDO, FFO, BMZ, and other funded projects in Somalia and Sierra Leone, as well as Save the Children country offices, I oversaw the design and construction of MEAL systems. I am a certified SMART and SQUEAC survey manager, and I successfully completed more than ten SMART and SQUEAC surveys in Somalia. I contributed to the completion of 15 research projects in Somalia and the publication of 8 papers; of these, three were cluster randomized control trials.</p>
-  <p>In my role as department head, I oversee the research, evaluation, accountability, learning, and monitoring of more than fifty employees. I also lead the digitization of the system to produce evidence and learning insights based on program outcome, impact level, and field implementation.</p>
-  <p>I'm currently enrolled at AMREF International University to pursue an MPH. I graduated from the Front Field Epidemiology Training Program (FETP) cohort 6 in Somalia.</p>
+  <p>With more than ten years of experience developing strategic information systems for programs in Sierra Leone and Somalia, Abdullahi is a humanitarian MEAL practitioner. He has overseen the design and implementation of MEAL systems for Save the Children country offices as well as portfolios supported by USAID, ECHO, FCDO/DFID, FFO, and BMZ. Abdullahi, a certified SMART and SQUEAC survey manager, has published eight papers, including three cluster-randomized controlled trials, participated in 15 research projects, and conducted over ten surveys in Somalia. As a department head, Abdullahi leads system digitization to generate actionable, evidence-based insights and manages research, evaluation, accountability, learning, and monitoring for a group of more than fifty employees. Abdullahi is a graduate of Somalia's Field Epidemiology Training Program (FETP), cohort 6, and is currently pursuing an MPH at AMREF International University.</p>
   <p><em>Core skills:</em> advanced R, Stata, data visualization, Power BI, ArcGIS, and Generative AI.</p>
   <div aria-label="Core skills">
     <span class="pill">Advanced R</span>

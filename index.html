@@ -94,12 +94,12 @@
 @media(min-width:720px){ .profile{ grid-template-columns: 160px 1fr; gap:20px; } }
 .avatar{ position:relative; width:120px; height:120px; border-radius:50%; overflow:hidden; box-shadow: var(--shadow); border: 4px solid rgba(255,255,255,.9); background: #dbeafe; }
 @media(min-width:720px){ .avatar{ width:160px; height:160px; } }
-.avatar img{ width:100%; height:100%; display:block; object-fit: cover; object-position: 50% 24%; filter: contrast(1.02) saturate(1.05); background:#fff; }
+.avatar img{ width:100%; height:100%; display:block; object-fit: cover; object-position: 50% 30%; filter: contrast(1.02) saturate(1.05); background:#fff; }
 .tie{ position:absolute; left:50%; transform: translateX(-50%); bottom:6px; width:28%; height:36%; pointer-events:none; }
 
-.profile-top{ display:flex; justify-content:center; margin:6px 0 18px; }
-.avatar.avatar-lg{ width:180px; height:180px; }
-@media(min-width:720px){ .avatar.avatar-lg{ width:220px; height:220px; } }
+.profile-top{ display:flex; justify-content:center; margin:0 0 10px; }
+.avatar.avatar-lg{ width:140px; height:140px; }
+@media(min-width:720px){ .avatar.avatar-lg{ width:200px; height:200px; } }
 /* Timeline */
     .timeline{ position: relative; padding-left: 22px; }
     .timeline:before{ content:""; position:absolute; left:8px; top:0; bottom:0; width:2px; background: linear-gradient(180deg, #7aa2ff44, #8ef5d044); }
@@ -145,6 +145,7 @@
   <main>
     <section id="overview" class="hero">
       <div class="container">
+        <div class="profile-top"><figure class="avatar avatar-lg" aria-label="Portrait of Abdullahi Abdulle Farah"><img src="sandbox:/mnt/data/IMG_1042.jpg" alt="Abdullahi Abdulle Farah portrait" /></figure></div>
         <span class="badge" aria-label="8-week live cohort">8‑Week Live Cohort • No‑Code First</span>
         <h1>Generative AI for Work & Research — <span style="background:var(--grad-2); -webkit-background-clip:text; background-clip:text; color:transparent">Showcase</span></h1>
         <p class="lead">Curating my learning journey: practical automation, data analysis, research assistants, and communication workflows powered by modern LLM tools.</p>

@@ -1,186 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Generative AI for Work & Research – Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Generative AI for Work & Research — Portfolio | Abdullahi A. Farah</title>
+  <meta name="description" content="One‑page portfolio for the Generative AI for Work & Research course. About me, the course, and weekly submissions." />
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #ffe4e6, #fff7ed, #ffffff);
-      color: #1c1917;
+    :root{
+  --bg: #eaf4ff;
+  --ink: #0b1f3a;
+  --muted: #51617d;
+  --primary: #2a66ff;
+  --accent: #00c9a7;
+  --card: rgba(255,255,255,0.88);
+  --stroke: rgba(11,31,58,0.12);
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(12,31,58,.12);
+  --grad-1: radial-gradient(1200px 1200px at 10% -10%, rgba(90,150,255,.25), transparent 60%),
+            radial-gradient(900px 900px at 110% 10%, rgba(0,201,167,.18), transparent 60%),
+            radial-gradient(600px 600px at 70% 120%, rgba(140,80,255,.18), transparent 60%);
+  --grad-2: linear-gradient(135deg, #2a66ff 0%, #00c9a7 50%, #9b7dff 100%);
+}
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0; font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      color: var(--ink); background: var(--bg);
+      background-image: var(--grad-1);
+      background-attachment: fixed;
     }
-    header {
-      position: sticky;
-      top: 0;
-      background: linear-gradient(to right, rgba(251, 207, 232, 0.8), rgba(253, 186, 116, 0.8));
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid #e5e5e5;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
+    a{ color: var(--primary); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    .container{ max-width: 1120px; margin-inline: auto; padding: 28px; }
+
+    /* Header */
+    header{
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.72);
+      border-bottom: 1px solid var(--stroke);
     }
-    header a.logo {
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      color: #111;
+    .nav{ display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand{ display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.2px; }
+    .brand-badge{ width:36px; height:36px; border-radius:12px; display:grid; place-items:center;
+      background: var(--grad-2); color:#0b0f1e; font-weight:800; box-shadow: var(--shadow);
     }
-    nav a {
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      background: linear-gradient(to right, #ec4899, #f97316);
-      color: #fff;
-      margin-left: 0.5rem;
-      transition: 0.3s;
+    nav ul{ list-style:none; display:flex; gap: 16px; padding:0; margin:0; flex-wrap:wrap; }
+    nav a{ display:block; padding:10px 14px; border-radius: 999px; border: 1px solid transparent; }
+    nav a:hover{ background: var(--card); border-color: var(--stroke); text-decoration:none; }
+
+    /* Hero */
+    .hero{ padding: 64px 0 36px; position: relative; overflow:hidden; isolation:isolate; }
+.hero:after{ content:""; position:absolute; right:-160px; top:-120px; width:720px; height:520px; background:
+  radial-gradient(closest-side at 60% 40%, rgba(42,102,255,.20), transparent 70%),
+  radial-gradient(closest-side at 30% 60%, rgba(0,201,167,.18), transparent 70%);
+  border-radius: 58% 42% 40% 60% / 58% 44% 56% 42%;
+  filter: blur(2px);
+  z-index:-1;
+}
+    .hero h1{ font-size: clamp(28px, 4.5vw, 46px); line-height:1.15; margin: 0 0 12px; }
+    .hero p.lead{ color: var(--muted); font-size: clamp(16px, 1.8vw, 19px); margin: 0 0 22px; }
+    .badge{ display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px;
+      background: var(--card); border: 1px solid var(--stroke); color: var(--muted); font-weight:600; }
+    .cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 18px; }
+    .btn{ display:inline-block; padding:12px 16px; border-radius: 12px; font-weight:700; letter-spacing:.2px;
+      border:1px solid var(--stroke); background: var(--card); color:var(--ink); box-shadow: var(--shadow);
+      transition:.25s transform, .25s filter;
     }
-    nav a:hover {
-      background: linear-gradient(to right, #db2777, #ea580c);
+    .btn.primary{ background: var(--grad-2); color: #0b0f1e; border-color: transparent; }
+    .btn:hover{ transform: translateY(-2px); filter: brightness(1.05); text-decoration:none; }
+
+    /* Sections */
+    section{ scroll-margin-top: 90px; }
+    .section-head{ display:flex; align-items:end; justify-content:space-between; gap:16px; margin: 42px 0 18px; }
+    .section-head h2{ font-size: clamp(22px, 3.6vw, 34px); margin:0; }
+    .kicker{ text-transform: uppercase; letter-spacing: .22em; font-size: 12px; color: var(--muted); }
+
+    /* Cards & layout */
+    .grid{ display:grid; gap: 18px; }
+    .grid.cols-2{ grid-template-columns: repeat(1, 1fr); }
+    .grid.cols-3{ grid-template-columns: repeat(1, 1fr); }
+    @media(min-width:720px){
+      .grid.cols-2{ grid-template-columns: repeat(2, 1fr); }
+      .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
     }
-    section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-    }
-    h1, h2 {
-      background: linear-gradient(to right, #ec4899, #f97316);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 800;
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      align-items: center;
-      gap: 2rem;
-    }
-    .button {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-right: 0.5rem;
-    }
-    .btn-dark {
-      background: linear-gradient(to right, #ec4899, #f97316);
-      color: #fff;
-    }
-    .btn-light {
-      background: linear-gradient(to right, #fde68a, #facc15);
-      color: #111;
-    }
-    .card {
-      border: 1px solid #e5e5e5;
-      border-radius: 1rem;
-      background: linear-gradient(to bottom right, #ffffff, #f9fafb);
-      padding: 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    .weeks {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-    footer {
-      border-top: 1px solid #e5e5e5;
-      background: linear-gradient(to right, #ffffff, #fafafa);
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-    .tag {
-      display: inline-block;
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      background: linear-gradient(to right, #ec4899, #f97316);
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 600;
-    }
+    .card{ background: var(--card); border: 1px solid var(--stroke); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+    .card h3{ margin: 0 0 8px; font-size: 18px; }
+    .card p{ margin: 0 0 8px; color: var(--muted); }
+    .soft-list{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+
+    /* About me */
+    .pill{ display:inline-block; padding:6px 10px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid var(--stroke); color: var(--muted); margin: 4px 6px 0 0; font-size: 13px; }
+
+    /* Timeline */
+    .timeline{ position: relative; padding-left: 22px; }
+    .timeline:before{ content:""; position:absolute; left:8px; top:0; bottom:0; width:2px; background: linear-gradient(180deg, #7aa2ff44, #8ef5d044); }
+    .t-item{ position:relative; margin: 14px 0; }
+    .t-item:before{ content:""; position:absolute; left:-2px; top:6px; width:10px; height:10px; border-radius: 50%; background: var(--grad-2); }
+    .t-role{ font-weight:700; }
+    .t-org{ color: var(--muted); }
+
+    /* Course features */
+    .feature{ display:flex; gap:10px; align-items:flex-start; }
+    .feature svg{ flex:0 0 20px; margin-top: 2px; }
+
+    /* Submissions */
+    .week-card{ position:relative; overflow:hidden; }
+    .week-card .coming{ position:absolute; right:12px; top:12px; font-size:12px; padding:4px 8px; border-radius:999px; background: rgba(255,255,255,.08); border:1px solid var(--stroke); color: var(--muted); }
+    .week-card .actions{ margin-top: 10px; display:flex; gap:10px; }
+
+    /* Footer */
+    footer{ margin: 48px 0 24px; color: var(--muted); text-align:center; }
+
+    /* Back to top */
+    .to-top{ position: fixed; right: 16px; bottom: 16px; z-index: 60; opacity:0; pointer-events:none; transition:.25s opacity, .25s transform; }
+    .to-top.show{ opacity:1; pointer-events:auto; }
   </style>
 </head>
 <body>
   <header>
-    <a href="#home" class="logo">✦ Portfolio</a>
-    <nav>
-      <a href="#about">About me</a>
-      <a href="#course">About the course</a>
-      <a href="#submissions">Weekly submissions</a>
-    </nav>
+    <div class="container nav">
+      <div class="brand">
+        <span class="brand-badge" aria-hidden>AF</span>
+        <span>Generative AI — Portfolio</span>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About me</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#submissions">My weekly submissions</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section id="home">
-    <div class="hero">
-      <div>
-        <h1>Generative AI for Work & Research</h1>
-        <p>Personal portfolio and course hub for <strong>Abdullahi Abdulle Farah</strong> – showcasing learning progress, weekly submissions, and resources.</p>
-        <div style="margin-top:1rem;">
-          <a href="#submissions" class="button btn-dark">View weekly work →</a>
-          <a href="#course" class="button btn-light">Course details</a>
+  <main>
+    <section id="overview" class="hero">
+      <div class="container">
+        <span class="badge" aria-label="8-week live cohort">8‑Week Live Cohort • No‑Code First</span>
+        <h1>Generative AI for Work & Research — <span style="background:var(--grad-2); -webkit-background-clip:text; background-clip:text; color:transparent">Showcase</span></h1>
+        <p class="lead">Curating my learning journey: practical automation, data analysis, research assistants, and communication workflows powered by modern LLM tools.</p>
+        $1<hr style="border:0;height:1px;background:var(--stroke);margin:24px 0 12px">
+<div class="grid cols-3">
+  <article class="card">
+    <h3>Format & Features</h3>
+    <div class="feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M4 5h16M4 12h16M4 19h16" stroke="currentColor" stroke-width="1.6"/></svg>Weekly live workshops + help sessions</div>
+    <div class="feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v6l4 2" stroke="currentColor" stroke-width="1.6"/></svg>Capstone coaching & personalized feedback</div>
+    <div class="feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.6"/><path d="M4 10h16" stroke="currentColor" stroke-width="1.6"/></svg>Private forums & lifetime tutorial access</div>
+    <div class="feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M7 11l3 3 7-7" stroke="currentColor" stroke-width="1.6"/></svg>Shareable certificate on completion</div>
+  </article>
+  <article class="card">
+    <h3>Assessment & Attendance</h3>
+    <ul class="soft-list">
+      <li>Online quizzes — <strong>15%</strong></li>
+      <li>Workshop assignments — <strong>35%</strong></li>
+      <li>Attendance & participation — <strong>10%</strong></li>
+      <li>Final project — <strong>40%</strong></li>
+    </ul>
+    <p style="margin-top:10px">Passing grade: <strong>80%</strong>. Attend at least <strong>5</strong> workshops for full attendance credit.</p>
+  </article>
+  <article class="card">
+    <h3>Learning Goals</h3>
+    <p>Build practical, no‑code/low‑code AI workflows for research and program operations—from data analysis to automation and communication.</p>
+    <div>
+      <span class="pill">AI‑assisted writing</span>
+      <span class="pill">LLM agents</span>
+      <span class="pill">Automations</span>
+      <span class="pill">RAG & chatbots</span>
+      <span class="pill">Data viz & reports</span>
+    </div>
+  </article>
+</div>
+<div class="grid cols-2" style="margin-top:18px">
+  <article class="card">
+    <h3>Modules (1—4)</h3>
+    <ul class="soft-list">
+      <li><strong>1. Websites, Documents & Presentations</strong> — LLM basics; generate Markdown/LaTeX/HTML; build simple research sites; AI presentation tools.</li>
+      <li><strong>2. AI‑Automated Data Analysis</strong> — Code Interpreter, Julius, TheBricks; dataset processing; dashboards; batch file tasks; automated reports.</li>
+      <li><strong>3. GenAI for Research & Text Analysis</strong> — Elicit/LiteRev; classification; sentiment; knowledge maps; summarization & synthesis pipelines.</li>
+      <li><strong>4. Custom GPTs & Chatbots</strong> — Context windows; RAG; custom GPTs; Botpress; knowledge‑base integration.</li>
+    </ul>
+  </article>
+  <article class="card">
+    <h3>Modules (5—7)</h3>
+    <ul class="soft-list">
+      <li><strong>5. AI for Task Automation</strong> — Email automations; agent‑based flows; browser control agents.</li>
+      <li><strong>6. GenAI for Communication & Outreach</strong> — Research summaries; figures & diagrams; video abstracts; visualization prompts; content scheduling.</li>
+      <li><strong>7. Capstone & Showcase</strong> — Progress checks; peer feedback; final presentation; public Q&A.</li>
+    </ul>
+  </article>
+</div>
+</div>
+</section>
+
+    <section id="about" class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Profile</div>
+          <h2>About me</h2>
         </div>
       </div>
-      <div class="card">
-        <p style="text-align:center;">🎨 Colorful showcase box</p>
+      <div class="grid cols-2">
+        <article class="card">
+  <h3>Abdullahi Abdulle Farah</h3>
+  <p>I am A humanitarian M&E practitioner with over ten years of experience in developing strategic information systems for development and humanitarian initiatives. For major donors like USAID, ECHO, DFID/FCDO, FFO, BMZ, and other funded projects in Somalia and Sierra Leone, as well as Save the Children country offices, I oversaw the design and construction of MEAL systems. I am a certified SMART and SQUEAC survey manager, and I successfully completed more than ten SMART and SQUEAC surveys in Somalia. I contributed to the completion of 15 research projects in Somalia and the publication of 8 papers; of these, three were cluster randomized control trials.</p>
+  <p>In my role as department head, I oversee the research, evaluation, accountability, learning, and monitoring of more than fifty employees. I also lead the digitization of the system to produce evidence and learning insights based on program outcome, impact level, and field implementation.</p>
+  <p>I'm currently enrolled at AMREF International University to pursue an MPH. I graduated from the Front Field Epidemiology Training Program (FETP) cohort 6 in Somalia.</p>
+  <p><em>Core skills:</em> advanced R, Stata, data visualization, Power BI, ArcGIS, and Generative AI.</p>
+  <div aria-label="Core skills">
+    <span class="pill">Advanced R</span>
+    <span class="pill">Stata</span>
+    <span class="pill">Power BI</span>
+    <span class="pill">ArcGIS</span>
+    <span class="pill">Generative AI</span>
+    <span class="pill">Data Visualization</span>
+  </div>
+</article>
+        <aside class="card">
+          <h3>Recent roles</h3>
+          <div class="timeline">
+            <div class="t-item">
+              <div class="t-role">Head of REALM</div>
+              <div class="t-org">Save the Children Somalia — 2023 to present</div>
+              <p class="t-desc">Country‑wide MEAL framework design, research partnerships, cash‑plus research implementation, and program data digitization.</p>
+            </div>
+            <div class="t-item">
+              <div class="t-role">Head of REALM</div>
+              <div class="t-org">Save the Children Somalia — 2020 to 2022</div>
+              <p class="t-desc">Quality benchmark systems, national learning assessments (EGRA/EGMA), accountability strategy relaunch, and multi‑sector evaluation oversight.</p>
+            </div>
+            <div class="t-item">
+              <div class="t-role">Area MEAL Manager</div>
+              <div class="t-org">Save the Children Somalia — since 2016</div>
+              <p class="t-desc">Led monitoring systems, mobile data collection scale‑up, and information systems for decision support.</p>
+            </div>
+          </div>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about">
-    <h2>About me</h2>
-    <p>I am <strong>Abdullahi Abdulle Farah</strong>, a research and monitoring leader (Head of REALM, Save the Children – Somalia) with experience in data systems, evaluations, and translating evidence into action across health, education, and social protection programs.</p>
-    <p>I am a SMART Survey Manager, a graduate of Frontline Field Epidemiology (cohort 6), and currently completing an MPH at AMREF International University.</p>
-  </section>
-
-  <section id="course">
-    <h2>About the course</h2>
-    <div class="card">
-      <h3>Schedule</h3>
-      <p>Workshops: Sundays 5–7 PM GMT or Wednesdays 3–5 PM GMT</p>
-      <p>Help sessions: Thursdays 5–7 PM GMT</p>
-    </div>
-    <div class="card" style="margin-top:1rem;">
-      <h3>Grading</h3>
-      <ul>
-        <li>Workshop assignments – 40%</li>
-        <li>Attendance & participation – 10%</li>
-        <li>Final project – 50%</li>
-        <li><strong>Passing grade: 80%</strong></li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="submissions">
-    <h2>My weekly submissions</h2>
-    <div class="weeks">
-      <div class="card">
-        <span class="tag">Week 1</span>
-        <h4>Websites & Presentations</h4>
-        <p>Status: Coming soon</p>
+        <section id="submissions" class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Portfolio</div>
+          <h2>My weekly submissions</h2>
+        </div>
       </div>
-      <div class="card">
-        <span class="tag">Week 2</span>
-        <h4>Automated Data Analysis</h4>
-        <p>Status: Coming soon</p>
+      <div class="grid cols-3">
+        <article class="card week-card">
+          <span class="coming">Coming soon</span>
+          <h3>Week 1 — LLMs & Research Websites</h3>
+          <p>Foundations of LLMs; Markdown/LaTeX/HTML; first no‑code site.</p>
+          <div class="actions">
+            <a class="btn" href="#" aria-label="Add link later">Add link</a>
+          </div>
+        </article>
+        <article class="card week-card">
+          <span class="coming">Coming soon</span>
+          <h3>Week 2 — AI Data Analysis</h3>
+          <p>Rapid analysis with Code Interpreter; first automated report.</p>
+          <div class="actions"><a class="btn" href="#">Add link</a></div>
+        </article>
+        <article class="card week-card">
+          <span class="coming">Coming soon</span>
+          <h3>Week 3 — Literature & Text Mining</h3>
+          <p>Elicit/LiteRev pipelines; classification & sentiment; synthesis.</p>
+          <div class="actions"><a class="btn" href="#">Add link</a></div>
+        </article>
+        <article class="card week-card">
+          <span class="coming">Coming soon</span>
+          <h3>Week 4 — Custom GPT & RAG</h3>
+          <p>Knowledge grounding; retrieval; Botpress prototype assistant.</p>
+          <div class="actions"><a class="btn" href="#">Add link</a></div>
+        </article>
+        <article class="card week-card">
+          <span class="coming">Coming soon</span>
+          <h3>Week 5 — Automation Agents</h3>
+          <p>Email reply flows; browser automations; monitoring agents.</p>
+          <div class="actions"><a class="btn" href="#">Add link</a></div>
+        </article>
+        <article class="card week-card">
+          <span class="coming">Coming soon</span>
+          <h3>Week 6 — Communication & Outreach</h3>
+          <p>Figures, diagrams, and video abstracts for research sharing.</p>
+          <div class="actions"><a class="btn" href="#">Add link</a></div>
+        </article>
+        <article class="card week-card">
+          <span class="coming">Coming soon</span>
+          <h3>Week 7 — Capstone: Prototype</h3>
+          <p>Peer feedback loop; iteration on the project MVP.</p>
+          <div class="actions"><a class="btn" href="#">Add link</a></div>
+        </article>
+        <article class="card week-card">
+          <span class="coming">Coming soon</span>
+          <h3>Week 8 — Capstone: Final</h3>
+          <p>Final presentation & Q&A; repository and documentation.</p>
+          <div class="actions"><a class="btn" href="#">Add link</a></div>
+        </article>
       </div>
-      <div class="card">
-        <span class="tag">Week 3</span>
-        <h4>Text Processing & Research</h4>
-        <p>Status: Coming soon</p>
-      </div>
-      <!-- Add other weeks similarly -->
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    © 2025 Abdullahi Abdulle Farah • Generative AI for Work & Research
-  </footer>
+    <footer class="container">
+      <p>© <span id="y"></span> Abdullahi Abdulle Farah • Portfolio for the Generative AI for Work & Research course.</p>
+      <p style="font-size:13px">No email displayed to prevent spam. You can share this page as is.</p>
+    </footer>
+  </main>
+
+  <a href="#top" class="btn to-top" id="toTop" aria-label="Back to top">↑ Back to top</a>
+
+  <script>
+    // smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+    // footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // back to top visibility
+    const btn = document.getElementById('toTop');
+    const toggleBtn = () => {
+      const y = window.scrollY || document.documentElement.scrollTop;
+      if(y > 500){ btn.classList.add('show'); } else { btn.classList.remove('show'); }
+    };
+    toggleBtn();
+    window.addEventListener('scroll', toggleBtn, {passive:true});
+  </script>
 </body>
 </html>
